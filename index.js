@@ -95,7 +95,8 @@ for (var i in cheminsUnil.features) {
 
 
 mymap.on('mousemove', function(e){
-  console.log(e.latlng);
+  var coord = e.latlng;
+  $('#coordonnees').html('Coordonnées: ' + coord.lat.toFixed(5) +' / '+ coord.lng.toFixed(5));
 });
 
 
