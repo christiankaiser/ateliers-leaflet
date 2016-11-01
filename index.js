@@ -114,3 +114,11 @@ mymap.on('mousemove', function(e){
 });
 
 
+$('.recherche select').on('change', function(e){
+  var id_batiment = $('.recherche select').val();
+  if (id_batiment == "") return;
+  var bati = batiments[id_batiment];
+  mymap.panTo(bati.coords, {animate: true});
+});
+
+
