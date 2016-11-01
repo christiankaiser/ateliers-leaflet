@@ -69,6 +69,7 @@ for (var k in batiments){
   }
   var marqueur = L.marker(bati.coords, {icon: iconeMarqueur}).addTo(mymap);
   marqueur.batiment = bati;
+  bati.marqueur = marqueur;    // pour accéder au marqueur depuis la recherche du bâtiment
   marqueur.on('click', function(e){
     var bati = e.target.batiment;
     var html = '<table cellpadding="3">';
@@ -118,7 +119,9 @@ $('.recherche select').on('change', function(e){
   var id_batiment = $('.recherche select').val();
   if (id_batiment == "") return;
   var bati = batiments[id_batiment];
-  mymap.panTo(bati.coords, {animate: true});
+  mymap.flyTo(bati.coords);
+  // Une seconde plus tard, faire sautiller le marqueur 4 fois:
+  setTimeout(function(){ bati.marqueur.bounce(4); }, 1000);
 });
 
 

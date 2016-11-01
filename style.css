@@ -96,3 +96,7 @@ a:hover {
 .recherche select:focus {
   outline-color: #5da9dd;
 }
+
+.leaflet-marker-icon:focus {
+  outline: none;
+}
