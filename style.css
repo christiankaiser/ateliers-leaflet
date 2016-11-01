@@ -86,3 +86,13 @@ a:hover {
   top: 506px;
   font-size: 11px;
 }
+
+.recherche select {
+  height: 28px;
+  width: 100%;
+  background-color: #fff;
+  border-color: #555;
+}
+.recherche select:focus {
+  outline-color: #5da9dd;
+}

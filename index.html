@@ -19,8 +19,13 @@
         <p class="explication">Cette carte interactive permet de vous orienter sur le campus de l'UNIL.</p>
 
         <div class="recherche">
-          <input type="text" name="recherche" placeholder="Rechercher dans la carte" />
-          <button onclick="alert('Trouvé!');">Chercher</button>
+          <select>
+            <option value="">-- Sélectionner votre bâtiment --</option>
+            <option value="GEO">Géopolis</option>
+            <option value="ANT">Anthropole</option>
+            <option value="MAX">Amphimax</option>
+            <option value="POL">Amphipole</option>
+          </select>
         </div>
 
         <div class="infobox">
