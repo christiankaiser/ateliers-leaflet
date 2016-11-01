@@ -83,16 +83,6 @@ var overlays = {};
 L.control.layers(baseLayers, overlays).addTo(mymap);
 
 
-// Ajouter les chemins de l'UNIL
-/* Voici la variante 1 avec un seul style:
-var cheminsUnilStyle = {
-  "color": "#ff0000",
-  "weight": 4,
-  "opacity": 0.7
-}
-L.geoJSON(cheminsUnil, cheminsUnilStyle).addTo(mymap);
-*/
-
 for (var i in cheminsUnil.features) {
   var feature = cheminsUnil.features[i];
   var cheminStyle = {
@@ -102,3 +92,10 @@ for (var i in cheminsUnil.features) {
   };
   L.geoJSON(feature, cheminStyle).addTo(mymap);
 }
+
+
+mymap.on('mousemove', function(e){
+  console.log(e.latlng);
+});
+
+
