@@ -68,7 +68,21 @@ for (var k in batiments){
     iconeMarqueur = icones[bati.icone];
   }
   var marqueur = L.marker(bati.coords, {icon: iconeMarqueur}).addTo(mymap);
-  marqueur.bindPopup("<b>"+bati.nom+"</b><br>"+bati.descr);
+  marqueur.batiment = bati;
+  marqueur.on('click', function(e){
+    var bati = e.target.batiment;
+    var html = '<table cellpadding="3">';
+    html += '     <tr>';
+    html += '       <td><b>Bâtiment:</b></td>';
+    html += '       <td>' + bati.nom + '</td>';
+    html += '      </tr>';
+    html += '      <tr>';
+    html += '        <td><b>Description:</b></td>';
+    html += '        <td>' + bati.descr + '</td>';
+    html += '      </tr>';
+    html += '    </table>';
+    $('.infobox').html(html);
+  });
 }
 
 
